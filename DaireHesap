@@ -1,0 +1,33 @@
+import java.util.Scanner;
+/*Dairenin Alanını ve Çevresini Hesaplayan Program
+Java ile yarı çapını kullanıcıdan aldığınız dairenin alanını ve çevresini hesaplayan programı yazın.
+
+Alan Formülü : π * r * r;
+
+Çevre Formülü : 2 * π * r;
+Ödev
+Yarıçapı r, merkez açısının ölçüsü 𝛼 olan daire diliminin alanı bulan programı yazınız.
+𝜋 sayısını = 3.14 alınız.
+Formül : (𝜋 * (r*r) * 𝛼) / 360
+*/
+
+
+public class Daire {
+    public static void main(String[] args) {
+        int r;
+        double alan,cevre,PI=3.14,a;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Yarı Çap giriniz:");
+        r=inp.nextInt();
+        alan=PI*r*r;
+        cevre=2*PI*r;
+        System.out.println("Alan:"+alan +"\n Cevre"+cevre);
+
+        System.out.println("Daire dilimi alanı için merkez açısı giriniz");
+        a=inp.nextDouble();
+        alan=(PI * (r*r) * a) / 360;
+
+        System.out.println("Alan:"+ alan);
+
+    }
+}
