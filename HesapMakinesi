@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+/*Kullanıcadan alınan 2 tam sayıyı secıme göre 4 islem yaptıran prgram*/
+
+
+
+public class hesap {
+    public static void main(String[] args) {
+        int s1,s2,secim;
+        double snc;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("1.Sayıyı giriniz:");
+        s1= inp.nextInt();
+        System.out.printf("2.Sayıyı giriniz: ");
+        s2=inp.nextInt();
+
+        System.out.println("Yapmak istediğiniz işlemi seciniz");
+        System.out.println("1-Toplama");
+        System.out.println("2-Çıkartma");
+        System.out.println("3-Çarpma");
+        System.out.println("4-Bölme");
+
+        secim=inp.nextInt();
+
+        switch (secim){
+            case 1:
+                snc=s1+s2;
+                System.out.println("Sonuc:"+snc);
+                break;
+            case 2:
+                snc=s1-s2;
+                System.out.printf("sonuc:"+snc);
+                break;
+            case 3:
+                snc=s1*s2;
+                System.out.println("sonuc:"+snc);
+                break;
+            case 4:
+                if (s2==0){
+                    System.out.printf("Herhangi bir sayi 0 a bölünemez.");
+                }else{
+                    snc=s1/s2;
+                    System.out.println("sonuc:"+snc);
+                }
+                break;
+
+
+            default:
+                System.out.println("Hatalı giriş Yaptınız");
+
+        }
+
+    }
+}
