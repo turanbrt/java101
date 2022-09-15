@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+
+public class bilet {
+    public static void main(String[] args) {
+        int year,km,yon;
+        double tutar,bilet;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Lütfen istenilen değerleri giriniz...");
+        System.out.println("YAŞ:");
+        year= inp.nextInt();
+        System.out.println("Yolculuk mesafesi(km)");
+        km= inp.nextInt();
+        System.out.println("Seçim yapınız ..\n 1-TEK YÖN \n 2-GİDİŞ DONÜŞ");
+        yon=inp.nextInt();
+        if((year<0 || km<0 )|| !(yon ==1 || yon==2)){
+            System.out.println("GEÇERSİZ DEĞER GİRDİNİZ");
+        } else {
+            tutar=0.10*km;
+            bilet=0.10*km;
+            System.out.println("İndirimsiz tutar:"+tutar);
+            if(year<12){
+                tutar=bilet-(bilet*0.5);
+                System.out.println("Cocuk indirimli tutar:"+tutar);
+            } else if (year>24 && year<65) {
+                tutar=bilet-(bilet*0.1);
+                System.out.println("Genç indirimli tutar:"+tutar);
+            } else if (year>65) {
+                tutar=bilet-(bilet*0.2);
+                System.out.println("Yaşlı inidirimli tutar:"+tutar);
+            }
+            if (yon==2){
+                tutar=tutar-(bilet*0.2);
+                System.out.println("Ek gidiş dönüs  inidirimli tutar:"+tutar);
+            }
+           // System.out.println("Tutar:"+tutar);
+
+        }
+
+    }
+}
