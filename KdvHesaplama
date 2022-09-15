@@ -1,0 +1,37 @@
+import java.util.Scanner;
+/*KDV Tutarı Hesaplayan Program
+Java ile kullanıcıdan alınan para değerinin KDV'li fiyatını ve KDV
+ tutarını hesaplayıp ekrana bastıran programı yazın.
+
+(Not : KDV tutarını 18% olarak alın)
+
+
+Ödev
+Eğer girilen tutar 0 ve 1000 TL arasında ise KDV oranı %18 ,
+tutar 1000 TL'den büyük ise KDV oranını %8 olarak KDV tutarı hesaplayan programı yazınız
+ */
+
+
+public class KdvHesap {
+    public static void main(String[] args) {
+    int tutar;
+    double kdv;
+    double kdvli_tutar;
+
+
+    Scanner inp=new Scanner(System.in);
+    System.out.println("Tutar giriniz:");
+    tutar=inp.nextInt();
+    System.out.println("KDV'siz fiyat: "+ tutar);
+    boolean baraj=tutar>=1000;
+
+    kdv= baraj ? 0.08 : 0.18;
+    kdvli_tutar=kdv+tutar;
+
+    System.out.println("KDV tutarı: "+ kdv);
+    System.out.println("KDV'li fiyat: "+ kdvli_tutar);
+
+
+
+    }
+}
