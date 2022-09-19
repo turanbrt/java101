@@ -1,0 +1,16 @@
+import java.util.Scanner;
+// Bir sayının basamak sayılarının toplamını hesaplayan program yazınız.
+public class hesap {
+    public static void main(String[] args) {
+        int sayi,toplam=0,bolum;
+        Scanner inp=new Scanner(System.in);
+        System.out.print("Sayi giriniz:");
+        sayi=inp.nextInt();
+        do{
+            toplam=toplam+(sayi%10);
+            bolum=sayi/10;
+            sayi=bolum;
+        }while(bolum!=0);
+        System.out.println("Basamaklar Toplamı:"+toplam);
+    }
+}
