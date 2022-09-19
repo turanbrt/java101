@@ -1,0 +1,20 @@
+
+public class hesap {
+    public static void main(String[] args) {
+        int sayi;
+        Scanner inp=new Scanner(System.in);
+
+        System.out.println("sayi giriniz");
+        sayi=inp.nextInt();
+        System.out.println("4un kuvveti olan sayilar ");
+        for(int i=1; i<=sayi; i=i*4){
+
+            System.out.println(i);
+        }
+        System.out.println("5in kuvveti olan sayilar ");
+        for(int k=1;  k<=sayi;  k=k*5){
+
+            System.out.println(k);
+        }
+    }
+}
