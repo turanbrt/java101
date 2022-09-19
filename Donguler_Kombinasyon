@@ -1,0 +1,29 @@
+public class Hesap {
+    public static void main(String[] args) {
+        int c, n, r, nf = 1, rf = 1, nrf = 1;
+        Scanner inp = new Scanner(System.in);
+
+        System.out.print("n: ");
+        n = inp.nextInt();
+        System.out.print("r: ");
+        r = inp.nextInt();
+
+        if (n < r) {
+            System.out.println("HATALI GİRİŞ !  " + n + "<"+r);
+        } else {
+
+
+            for (int i = 1; i <= n; i++) {
+                nf = nf * i;
+            }
+            for (int i = 1; i <= r; i++) {
+                rf = rf * i;
+            }
+            for (int i = 1; i <= (n - r); i++) {
+                nrf = nrf * i;
+            }
+            c = nf / (rf * (nrf));
+            System.out.println("C(" + n + "," + r + ")=" + c);
+        }
+    }
+}
