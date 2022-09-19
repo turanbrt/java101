@@ -1,0 +1,33 @@
+import  java.util.Scanner;
+
+/*Java ile kullanıcının girdiği değerler ile
+üslü sayı hesaplayan programı "For Döngüsü" kullanarak yapınız.
+ */
+
+public class hesap {
+    public static void main(String[] args) {
+        int a,b;
+        double snc=1;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("a^b için degerleri giriniz...");
+        System.out.print("a:");
+        a=inp.nextInt();
+        System.out.print("b:");
+        b=inp.nextInt();
+
+        if(b<0){
+            b=b*(-1);
+            for(int i=1; i<=b; i++){
+                snc=snc*a;
+            }
+            snc=1/snc;
+            System.out.println(a+"^"+b+"="+snc);
+        }else {
+            for (int i = 1; i <= b; i++) {
+                snc = snc * a;
+            }
+            System.out.println(a + "^" + b + "="+snc);
+        }
+
+    }
+}
