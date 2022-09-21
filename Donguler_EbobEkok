@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class hesap {
+    public static void main(String[] args) {
+        int ebob=0,ekok,s1,s2,i=1;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("2 tam sayi giriniz...");
+        System.out.print("s1: ");
+        s1=inp.nextInt();
+        System.out.print("s2: ");
+        s2=inp.nextInt();
+
+        while (i<= s1 || i<=s2) {
+            if(s1%i==0 && s2%i==0){
+                ebob=i;
+
+            }
+            i++;
+        }
+        ekok=(s1*s2)/ebob;
+        System.out.println("EBOB: "+ebob);
+        System.out.println("EKOK: "+ekok);
+
+    }
+}
