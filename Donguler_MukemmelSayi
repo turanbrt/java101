@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class hesap {
+    public static void main(String[] args) {
+        int toplam=0, sayi;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Bir sayi giriniz: ");
+        sayi = inp.nextInt();
+        for (int i = 1; i < sayi; i++) {
+            if (sayi % i == 0) {
+                toplam = toplam + i;
+            }
+        }
+        if (sayi == toplam) {
+            System.out.println(sayi + "-Mükemmel sayidir.");
+        }else {
+            System.out.println(sayi + "-Mükemmel sayi değildir.");
+        }
+    }
+}
