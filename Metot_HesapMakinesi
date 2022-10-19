@@ -1,0 +1,203 @@
+import java.util.Scanner;
+
+public class Main {
+    static void plus(){
+        int result=0,number,count;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Toplama işlemi için kaç adet sayı gireceksiniz ?");
+        count= inp.nextInt();
+
+        for(int i=1; i<=count; i++){
+            System.out.print("Sayı " +i +":");
+            number=inp.nextInt();
+            result+=number;
+        }
+        System.out.println("Sonuç: "+result);
+
+    };
+    static void minus(){
+        int result=0,number,count;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Çıkarma işlemi için kaç adet sayı gireceksiniz ?");
+        count= inp.nextInt();
+
+        for(int i=1; i<=count; i++){
+            System.out.print("Sayı " +i +":");
+            number=inp.nextInt();
+            if(i==1){
+                result+=number;
+            } else{
+                result-=number;
+            }
+
+        }
+        System.out.println("Sonuç: "+result);
+
+
+
+    };
+    static void times(){
+        int result=1,number,count;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Çarpma işlemi için kaç adet sayı gireceksiniz ?");
+        count= inp.nextInt();
+
+        for(int i=1; i<=count; i++){
+            System.out.print("Sayı " +i +":");
+            number=inp.nextInt();
+            result*=number;
+        }
+        System.out.println("Sonuç: "+result);
+
+    };
+    static void divided(){
+        int number,count;
+        double result=1;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Bölme işlemi için kaç adet sayı gireceksiniz ?");
+        count= inp.nextInt();
+
+        for(int i=1; i<=count; i++){
+            System.out.print("Sayı " +i +":");
+            number=inp.nextInt();
+            if(number==0){
+                System.out.println("0 herhangi bir sayıya bölünmez");
+                break;
+            }
+            if(i==1){
+                result=number;
+            }else{
+                result=result/number;
+            }
+        }
+        System.out.println("Sonuç: "+result);
+
+    };
+    static void power(){
+        int result=1,exp,base;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Taban sayıyı giriniz ?");
+        base= inp.nextInt();
+        System.out.println("Üs sayıyı giriniz ?");
+        exp= inp.nextInt();
+        if(exp==0){
+            result=1;
+
+        }else{
+            for(int i=1; i<=exp; i++){
+
+            result=result*base;
+            }
+
+        }
+
+
+
+        System.out.println("Sonuç: "+result);
+
+    };
+    static void factorial(){
+        int num,result=1;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Sayı giriniz...");
+        num=inp.nextInt();
+        if(num==0){
+            result=1;
+        }else{
+            for(int i=1; i<=num; i++){
+                result=result*i;
+            }
+        }
+        System.out.println("Sonuç:"+result);
+
+
+
+
+    };
+    static void mod(){
+        int num1,num2;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("sayı1:");
+        num1=inp.nextInt();
+        System.out.println("sayı2:");
+        num2=inp.nextInt();
+
+        System.out.println("Sonuc:"+num1%num2);
+
+
+    };
+    static void rectangle(){
+        int num1,num2;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Kenar1 :");
+        num1=inp.nextInt();
+        System.out.println("Kenar2:");
+        num2=inp.nextInt();
+
+        System.out.println("ALAN:"+num1*num2);
+        System.out.println("Çevre:"+2*(num1+num2));
+
+
+    };
+
+
+    public static void main(String[] args) {
+
+        int select;
+
+        Scanner inp=new Scanner(System.in);
+
+        String menu="1-Toplama\n"+
+                "2-Çıkarma\n"+
+                "3-Çarmpa\n"+
+                "4-Bölme\n"+
+                "5-Üs alma\n"+
+                "6-Faktoriyel\n"+
+                "7-Mod alma\n"+
+                "8-Dikdörtgen Alan Hesaplama\n"+
+                "0-Çıkış\n";
+        do {
+            System.out.println(menu);
+            System.out.println("Yapmak istediğiniz işlemi seçiniz...");
+            select=inp.nextInt();
+            switch (select){
+                case 0:
+                    System.out.println("çıkış yapıldı");
+                    break;
+                case 1:
+                    plus();
+                    break;
+                case 2:
+                    minus();
+                    break;
+                case 3:
+                    times();
+                    break;
+                case 4:
+                    divided();
+                    break;
+                case 5:
+                    power();
+                    break;
+                case 6:
+                    factorial();
+                    break;
+                case 7:
+                    mod();
+                    break;
+                case 8:
+                    rectangle();
+                    break;
+                default:
+                    System.out.println("Yanlış değer girdiniz.");
+            }
+
+        }while (select!=0);
+
+
+
+
+
+
+    }
+}
